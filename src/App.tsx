@@ -1,4 +1,4 @@
-import { Post } from "./components/Post";
+import { Post, PostType } from "./components/Post";
 import { Header } from "./components/Header";
 import { Sidebar } from "./components/Sidebar";
 
@@ -9,7 +9,7 @@ import "./global.css";
 //content: String
 //publishedAt: Date
 
-const posts = [
+const posts: PostType[] = [
   //Simulando uma estrutura do back-end - servidor
   {
     id: 1,
@@ -66,9 +66,7 @@ export function App() {
             return (
                 <Post 
                   key={ post.id }
-                  author={ post.author }
-                  content={ post.content }
-                  publishedAt={ post.publishedAt }
+                  post={ post }
                 />
               )
           })}
